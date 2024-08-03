@@ -1,0 +1,19 @@
+@use "../../style/colors.scss";
+
+.card {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 8px;
+  margin: 8px;
+
+  border: 2px solid colors.$white;
+  border-radius: 8px;
+
+  background-color: colors.$blue;
+  color: colors.$white;
+}

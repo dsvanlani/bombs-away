@@ -1,0 +1,1 @@
+export { BombCard } from "./BombCard";

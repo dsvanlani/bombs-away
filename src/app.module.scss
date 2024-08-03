@@ -1,0 +1,32 @@
+@use "./style/colors.scss";
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100vw;
+  height: 100vh;
+
+  background-color: colors.$linen;
+}
+
+.card {
+  min-width: 400px;
+  min-height: 500px;
+
+  border: 2px solid colors.$blue;
+  border-radius: 8px;
+  background-color: colors.$rose;
+
+  display: flex;
+  flex-direction: column;
+  padding: 8px;
+}
+
+.actions {
+  min-height: 64px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

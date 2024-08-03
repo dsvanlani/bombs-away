@@ -1,0 +1,33 @@
+@use "../../style/colors.scss";
+
+.button {
+  // Remove default button styles
+  border: none;
+  padding: 0;
+  background: none;
+  font: inherit;
+
+  border: 1px solid colors.$coral;
+  border-radius: 8px;
+  padding: 4px;
+  width: 250px;
+
+  background-color: colors.$coral;
+  color: colors.$white;
+
+  cursor: pointer;
+
+  &:hover {
+    background-color: colors.$yellow;
+    border-color: white;
+  }
+
+  &:disabled {
+    cursor: default;
+
+    &:hover {
+      background-color: colors.$coral;
+      border-color: colors.$coral;
+    }
+  }
+}
