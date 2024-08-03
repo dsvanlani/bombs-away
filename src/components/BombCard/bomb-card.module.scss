@@ -8,13 +8,15 @@
   align-items: center;
   justify-content: space-between;
 
-  padding: 8px;
+  padding: 16px;
   margin: 8px;
 
   border: 2px solid colors.$white;
   border-radius: 8px;
 
   background-color: colors.$blue;
+
+  font-size: 24px;
   color: colors.$white;
 }
 

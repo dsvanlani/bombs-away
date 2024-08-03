@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { render, screen, cleanup } from "@testing-library/react";
 import { Bomb, Context, ContextValue } from "Context";
 import { DetonateButton } from "./DetonateButton";
 
@@ -6,6 +6,8 @@ const sharedValue: Pick<ContextValue, "onActionClick" | "onRefreshClick"> = {
   onActionClick: () => {},
   onRefreshClick: () => {},
 };
+
+afterEach(cleanup);
 
 describe("DetonateButton", () => {
   it("renders", () => {

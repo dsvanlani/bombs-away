@@ -1,8 +1,8 @@
 import { useAppContext } from "Context";
 import { useMemo } from "react";
+import { allBombsExploded } from "utils";
 
 import styles from "./detonate-button.module.scss";
-import { allBombsExploded } from "utils";
 
 export const DetonateButton: React.FC = () => {
   const { startTime, onActionClick, fuses } = useAppContext();
