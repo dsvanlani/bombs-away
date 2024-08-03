@@ -8,13 +8,22 @@ interface BomCardProps {
 export const BombCard: React.FC<BomCardProps> = ({ label }) => {
   const { fuses } = useAppContext();
 
+  const exploded = fuses[label] === 0;
+  const classes = [styles.card];
+  if (exploded) {
+    classes.push(styles.exploded);
+  }
+
   return (
-    <div className={styles.card}>
+    <div className={classes.join(" ")}>
       <div>
-        <strong>{label}</strong>
+        <strong>{exploded ? "Exploded" : label}</strong>
       </div>
       <div>
-        <strong>{fuses[label] / 1000}</strong> seconds
+        <strong data-testid={`${label}-fuse-value`}>
+          {fuses[label] / 1000}
+        </strong>{" "}
+        seconds
       </div>
     </div>
   );
