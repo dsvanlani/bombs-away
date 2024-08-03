@@ -34,6 +34,7 @@ export const ContextProviderComponent: FC = ({ children }) => {
   const [fuses, setFuses] = useState<Record<Bomb, number> | null>(null);
   const [startTime, setStartTime] = useState<number | null>(null);
 
+  // Decrements fuses by 1000 milleseconds
   useEffect(() => {
     let timeout: ReturnType<typeof setTimeout> | null = null;
     if (fuses === null) return;
@@ -57,6 +58,7 @@ export const ContextProviderComponent: FC = ({ children }) => {
     };
   }, [fuses, startTime]);
 
+  // Initialize app state
   useEffect(() => {
     if (fuses === null) {
       const newFuses: Record<string, number> = {};
@@ -87,7 +89,7 @@ export const ContextProviderComponent: FC = ({ children }) => {
     <Context.Provider
       value={{
         fuses,
-        startTime: startTime,
+        startTime,
         onActionClick: handleActionClick,
         onRefreshClick: handleRefreshClick,
       }}
@@ -107,5 +109,5 @@ export function useAppContext(): ContextValue {
  */
 function randomFuseLength() {
   let rand = Math.random() * 11;
-  return Math.floor(rand) * 1000 + 10000;
+  return Math.floor(rand) * 1000 + 10_000;
 }
